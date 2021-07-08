@@ -24,8 +24,8 @@ pipeline {
     stage('Results') {
       agent any
       steps {
-        archiveArtifacts 'target/*.jar'
         junit '**/target/surefire-reports/TEST-*.xml'
+        archiveArtifacts 'target/*.jar'
       }
     }
 
